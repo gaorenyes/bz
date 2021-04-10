@@ -1592,12 +1592,12 @@
 
     s += '<tr>';
     s += '<td>流年：</td>';
-    s += '<td colspan="10" class="left small">'+ shenShaliuNian.join(' ') +'</td>';	
+    s += '<td colspan="10" class="left small">'+ (shenShaliuNian.length<1 ? '无吉神凶煞' : shenShaliuNian.join(' ')) +'</td>';	
     s += '</tr>';
     
     s += '<tr>';
     s += '<td>流月：</td>';
-    s += '<td colspan="10" class="left small">'+ shenShaliuYue.join(' ') +'</td>';	
+    s += '<td colspan="10" class="left small">'+ (shenShaliuYue.length<1 ? '无吉神凶煞' : shenShaliuYue.join(' ')) +'</td>';	
     s += '</tr>';    
 
     s += '<tr>';
