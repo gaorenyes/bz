@@ -717,7 +717,7 @@
     // 年柱神煞开始
     // 每柱神煞开始才加这一行
     var shenShaTemp = {};
- 
+
     for(var i in shenShaGanGan){
       var gzs = shenShaGanGan[i];
       for(var j=0,k=gzs.length;j<k;j++){
@@ -803,6 +803,16 @@
       for(var j=0,k=gzs.length;j<k;j++){
         var gz = gzs[j];
         if(gz == bazi.getDayZhi()+bazi.getYearZhi()){
+          shenShaTemp[i] = true;
+        }
+      }
+    }
+
+    for(var i in shenShaYearNaYinDiZhi){
+      var gzs = shenShaYearNaYinDiZhi[i];
+      for(var j=0,k=gzs.length;j<k;j++){
+        var gz = gzs[j];
+        if(gz == bazi.getYearNaYin()+bazi.getYearZhi()){
           shenShaTemp[i] = true;
         }
       }
@@ -1872,7 +1882,7 @@
 		if(rzkw.indexOf(liuYueZhi) != -1){
 				shenShaliuYue.push("空亡");
 		}    
- 
+	
     s += '<td>年柱：</td>';
     s += '<td colspan="10" class="left small">'+ (shenShaYear.length<1 ? '无吉神凶煞' : shenShaYear.join(' ')) +'</td>';
     s += '</tr>'; 
@@ -2067,7 +2077,6 @@
          }
     }
     s += '<td colspan="10" class="left small">'+(matched.join(' '))+'</td>';
-
     
     s += '<tr>';
     s += '<td>太岁：</td>';
@@ -2273,7 +2282,7 @@
       }else if('-'==v){
         gender = 0;
       }
-      if(year<1901||year>2099){
+      if(year<1||year>9999){
         return;
       }
       if(month>=0&&(month<1||month>12)){
@@ -2309,7 +2318,7 @@
       }else if('-'==v){
         gender = 0;
       }
-      if(year<1901||year>2099){
+      if(year<1||year>9999){
         return;
       }
       if(month<1||month>12){
